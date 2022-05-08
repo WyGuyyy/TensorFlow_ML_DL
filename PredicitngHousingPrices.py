@@ -75,7 +75,7 @@ for i in range(k):
 
     model = build_model() # using our function we wrote earlier
     history = model.fit(partial_train_data, partial_train_targets,
-              epochs=num_epochs, batch_size=1, verbose=0)
+              epochs=num_epochs, batch_size=16, verbose=0)
     val_mse, val_mae = model.evaluate(val_data, val_targets, verbose=0)
     all_scores.append(val_mae)
 
@@ -91,6 +91,8 @@ plt.plot(range(1, len(average_mae_history) + 1), average_mae_history)
 plt.xlabel('Epochs')
 plt.ylabel('Validation MAE')
 plt.show()
+
+test_mse_score, test_mae_score = model.evaluate(test_data, test_targets)
 
 
 
