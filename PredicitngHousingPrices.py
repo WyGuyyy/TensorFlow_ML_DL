@@ -79,7 +79,7 @@ for i in range(k):
     val_mse, val_mae = model.evaluate(val_data, val_targets, verbose=0)
     all_scores.append(val_mae)
 
-    mae_history = history.history['val_mean_absolute_error']
+    mae_history = history.history['mae']
     all_mae_histories.append(mae_history)
 
 average_mae_history = [
